@@ -1,7 +1,7 @@
 class Login:
     def cadastro(nome):
         lista = ["luiz", "eu"]
-        nome = input("digite seu nome('break' para parar e 'logar' para login): ")
+        nome = input("digite seu nome para cadastrar('break' para parar e 'logar' para login): ")
 
         while nome != "break" and nome != "logar":
             lista.append(nome)
@@ -13,17 +13,14 @@ class Login:
 
         if nome == "logar":
             nome_teste = input("digite seu nome: ")
-            for i in lista:
-                if nome_teste == nome:
-                    print("login completo")
-                else:
-                    print("usuario nao encontrado")
-
-    def login(nome_teste, nome, lista):
-        nome_teste = input("digite seu nome: ")
-        for i in lista:
-            if nome_teste == nome:
+            if nome_teste in lista:
                 print("login completo")
             else:
-                print("usuario nao encontrado")
-        
+                print("falha")
+
+    def login(nome_teste, lista):
+        nome_teste2 = input("digite seu nome: ")
+        if nome_teste2 in lista:
+            print("login completo")
+        else:
+            print("falhou")
